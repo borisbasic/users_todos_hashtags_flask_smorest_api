@@ -1,5 +1,6 @@
 from marshmallow import Schema, fields
 
+
 class BasicToDoSchema(Schema):
     id = fields.Int(dump_only=True)
     to_do = fields.Str(required=True)
@@ -22,12 +23,12 @@ class RegisterSchema(Schema):
     email = fields.Email(required=True)
     password = fields.Str(required=True, load_only=True)
 
+
 class UserSchema(Schema):
     id = fields.Str(dump_only=True)
     username = fields.Str()
     email = fields.Str()
     todos = fields.List(fields.Nested(ToDoSchema(), dump_only=True))
-
 
 
 class LoginSchema(Schema):
