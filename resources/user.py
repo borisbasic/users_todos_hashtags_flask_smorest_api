@@ -49,7 +49,7 @@ class UserLogin(MethodView):
             acces_token = create_access_token(identity=user.id)
             return {"message": "User logged!", "access_token": acces_token}
         else:
-            abort(401, message="Invalid credintials!")
+            abort(401, message="Invalid credentials!")
 
 
 @blp.route("/logout")
